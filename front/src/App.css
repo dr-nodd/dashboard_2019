@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #12ACDE;
+}
+
+.App-link:hover {
+  color: #0F91BD;
+}
+
+a:hover {
+  color: white !important;
+}
+
+.Custom-btn {
+  background-color: #12ACDE;
+  color: white;
+  border: 2px solid #12ACDE;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+.Custom-btn:hover {
+  background-color: #0F91BD;
+  color: white;
+  border: 2px solid #0F91BD;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-right: 10px;
+}

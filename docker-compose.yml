@@ -1,0 +1,43 @@
+version: '3.7'
+
+services:
+
+  dashboard:
+    container_name: dashboard
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    volumes:
+      - './front:/dashboard'
+    ports:
+      - '8080:3000'
+    environment:
+      - NODE_ENV=development
+    expose:
+      - '8080'
+    depends_on:
+      - api
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
+    expose:
+      - '27017'
+
+  api:
+    container_name: api
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    volumes:
+      - './back:/api'
+    environment:
+      - NODE_ENV=development
+    links:
+      - mongo
+    depends_on:
+      - mongo
+    ports:
+      - '8800:8800'
